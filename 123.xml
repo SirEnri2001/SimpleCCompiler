@@ -1,0 +1,88 @@
+<Program optr='ExtDefList'>
+    <Ext optr='extdef_func'>
+        <FunDef optr='funhead_def'>
+            <Type list="['int']'"/>
+            <ID val='i_add'/>
+            <LocalDec optr='param_dec'>
+                <Type list="['int']'"/>
+                <ID val='a'/>
+            </LocalDec>
+            <LocalDec optr='param_dec'>
+                <Type list="['int']'"/>
+                <ID val='b'/>
+            </LocalDec>
+        </FunDef>
+        <CompStmt optr='compst'>
+            <Stmt optr='return'>
+                <Calc optr='+'>
+                    <Identifier val='a'/>
+                    <Identifier val='b'/>
+                </Calc>
+            </Stmt>
+        </CompStmt>
+    </Ext>
+    <Ext optr='extdef_func'>
+        <FunDef optr='funhead_def'>
+            <Type list="['float']'"/>
+            <ID val='f_add'/>
+            <LocalDec optr='param_dec'>
+                <Type list="['float']'"/>
+                <ID val='a'/>
+            </LocalDec>
+            <LocalDec optr='param_dec'>
+                <Type list="['float']'"/>
+                <ID val='b'/>
+            </LocalDec>
+        </FunDef>
+        <CompStmt optr='compst'>
+            <Stmt optr='return'>
+                <Calc optr='+'>
+                    <Identifier val='a'/>
+                    <Identifier val='b'/>
+                </Calc>
+            </Stmt>
+        </CompStmt>
+    </Ext>
+    <Ext optr='extdef_func'>
+        <FunDef optr='funhead_def'>
+            <Type list="['int']'"/>
+            <ID val='main'/>
+        </FunDef>
+        <CompStmt optr='compst'>
+            <LocalDec optr='dec'>
+                <Type list="['int']'"/>
+                <ID val='a'/>
+                <Calc optr='='>
+                    <ID val='a'/>
+                    <Val val='3'/>
+                </Calc>
+            </LocalDec>
+            <LocalDec optr='dec'>
+                <Type list="['float']'"/>
+                <ID val='fa'/>
+                <Calc optr='='>
+                    <ID val='fa'/>
+                    <Literal val='2.0'/>
+                </Calc>
+            </LocalDec>
+            <FuncCall optr='call'>
+                <Identifier val='f_add'/>
+                <FuncCall optr='call'>
+                    <Identifier val='i_add'/>
+                    <Calc optr='+'>
+                        <Identifier val='a'/>
+                        <Identifier val='a'/>
+                    </Calc>
+                    <Calc optr='*'>
+                        <Identifier val='a'/>
+                        <Identifier val='a'/>
+                    </Calc>
+                </FuncCall>
+                <Identifier val='fa'/>
+            </FuncCall>
+            <Stmt optr='return'>
+                <Val val='0'/>
+            </Stmt>
+        </CompStmt>
+    </Ext>
+</Program>
